@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+<html lang="en-us" ng-app="trixDemo" class="ng-scope"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css" data-tag-name="trix-editor">trix-editor:empty:not(:focus)::before {
+  content: attr(placeholder);
+  color: graytext;
+}
+
+trix-editor a[contenteditable=false] {
+  cursor: text;
+}
+
+trix-editor img {
+  max-width: 100%;
+  height: auto;
+}
+
+trix-editor [data-trix-attachment] figcaption textarea {
+  resize: none;
+}
+
+trix-editor [data-trix-attachment] figcaption textarea.trix-autoresize-clone {
+  position: absolute;
+  left: -9999px;
+  max-height: 0px;
+}
+trix-editor { display: block; }</style><style type="text/css" data-tag-name="trix-toolbar">trix-toolbar {
+  white-space: collapse;
+}
+
+trix-toolbar .dialog {
+  display: none;
+}
+
+trix-toolbar .dialog.active {
+  display: block;
+}
+
+trix-toolbar .dialog input.validate:invalid {
+  background-color: #ffdddd;
+}
+
+trix-toolbar[native] {
+  display: none;
+}
+trix-toolbar { display: block; }</style><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}</style>
+        
+        <title>Angular-trix - A rich wysiwyg text editor directive for angularjs.</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Angular-trix - A rich wysiwyg text editor directive for angularjs.">
+        <link rel="stylesheet" href="./files/css">
+        <link rel="stylesheet" type="text/css" href="./files/normalize.css" media="screen">
+        <link href="./files/css(1)" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="./files/trix.css">
+        <link rel="stylesheet" type="text/css" href="./files/stylesheet.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="./files/github-light.css" media="screen">
+    <script type="text/javascript" charset="utf-8" async="" src="./files/button.dbb8c488aada3c882aad6ab622207237.js"></script></head>
+    <body ng-controller="trixDemoCtrl" class="ng-scope">
+        <section class="page-header">
+            <h1 class="project-name">Angular-trix</h1>
+            <h2 class="project-tagline">A rich wysiwyg text editor directive for angularjs.</h2>
+            <a href="https://github.com/sachinchoolur/angular-trix" class="btn">View on GitHub</a>
+            <a href="https://github.com/sachinchoolur/angular-trix" class="btn">Read Documentation</a>
+            <a href="http://plnkr.co/edit/hSzwlzUmRQoUtZJke2C4?p=preview" target="_blank" class="btn">Plunker</a>
+        </section>
+        <section class="main-content">
+            <div class="share">
+                <iframe id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true" class="twitter-share-button twitter-share-button-rendered twitter-tweet-button" title="Twitter Tweet Button" src="./files/tweet_button.49c786af4341a3b6f7902429d573d1b3.en.html" style="position: static; visibility: visible; width: 75px; height: 28px;" data-url="http://sachinchoolur.github.io/angular-trix/"></iframe>
+<script id="twitter-wjs" src="./files/widgets.js"></script><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+            </div>
+            <div class="editor-wrap">
+                <h2>Angular-trix is a lightweight angularjs directive for <a target="_blank" href="https://github.com/basecamp/trix">trix editor</a></h2>
+                <trix-toolbar id="trix-toolbar-1"><div class="button_groups">
+  <span class="button_group text_tools">
+    <button type="button" class="bold" data-attribute="bold" data-key="b" title="Bold">Bold</button>
+    <button type="button" class="italic" data-attribute="italic" data-key="i" title="Italic">Italic</button>
+    <button type="button" class="strike" data-attribute="strike" title="Strikethrough">Strikethrough</button>
+    <button type="button" class="link" data-attribute="href" data-action="link" data-key="k" title="Link">Link</button>
+  </span>
+
+  <span class="button_group block_tools">
+    <button type="button" class="quote" data-attribute="quote" title="Quote">Quote</button>
+    <button type="button" class="code" data-attribute="code" title="Code">Code</button>
+    <button type="button" class="list bullets" data-attribute="bullet" title="Bullets">Bullets</button>
+    <button type="button" class="list numbers" data-attribute="number" title="Numbers">Numbers</button>
+    <button type="button" class="block-level decrease" data-action="decreaseBlockLevel" title="Decrease Level" disabled="">Decrease Level</button>
+    <button type="button" class="block-level increase" data-action="increaseBlockLevel" title="Increase Level" disabled="">Increase Level</button>
+  </span>
+
+  <span class="button_group history_tools">
+    <button type="button" class="undo" data-action="undo" data-key="z" title="Undo" disabled="">Undo</button>
+    <button type="button" class="redo" data-action="redo" data-key="shift+z" title="Redo" disabled="">Redo</button>
+  </span>
+</div>
+
+<div class="dialogs">
+  <div class="dialog link_dialog" data-attribute="href" data-dialog="href">
+    <div class="link_url_fields">
+      <input type="url" required="" name="href" placeholder="Enter a URL…" disabled="disabled">
+      <div class="button_group">
+        <input type="button" value="Link" data-method="setAttribute">
+        <input type="button" value="Unlink" data-method="removeAttribute">
+      </div>
+    </div>
+  </div>
+</div></trix-toolbar><trix-editor ng-model-options="{ updateOn: &#39;blur&#39; }" spellcheck="false" class="trix-content ng-valid ng-isolate-scope ng-dirty ng-valid-parse ng-touched" ng-model="trix" angular-trix="" trix-initialize="trixInitialize(e, editor);" trix-change="trixChange(e, editor);" trix-selection-change="trixSelectionChange(e, editor);" trix-focus="trixFocus(e, editor);" trix-blur="trixBlur(e, editor);" trix-file-accept="trixFileAccept(e, editor);" trix-attachment-add="trixAttachmentAdd(e, editor);" trix-attachment-remove="trixAttachmentRemove(e, editor);" placeholder="Write something.." contenteditable="" trix-id="1" input="trix-input-1" toolbar="trix-toolbar-1"><div><!--block--><strong>Lorem ipsum</strong>&nbsp;dolor sit amet,<strong>consectetur</strong>adipiscing elit<del>Praesent lacus diam</del>, fermentum et venenatis quis, suscipit sed nisi. In pharetra sem eget orci posuere pretium.<em>Integer</em>non eros<strong><em>scelerisque</em></strong>, consequat lacus id, rutrum felis. Nulla elementum felis urna, at placerat arcu ultricies in.</div><ul><li><!--block-->Proin elementum sollicitudin sodales.</li><li><!--block-->Nam id erat nec nibh dictum cursus.</li></ul><blockquote><!--block-->In et urna eros. Fusce molestie, orci vel laoreet tempus, sem justo blandit magna, at volutpat velit lacus id turpis.<br>Quisque malesuada sem at interdum congue. Aenean dapibus fermentum orci eu euismod.</blockquote><div><!--block--><br></div></trix-editor>
+            <input type="hidden" id="trix-input-1" value="&lt;div&gt;&lt;strong&gt;Lorem ipsum&lt;/strong&gt;&amp;nbsp;dolor sit amet,&lt;strong&gt;consectetur&lt;/strong&gt;adipiscing elit&lt;del&gt;Praesent lacus diam&lt;/del&gt;, fermentum et venenatis quis, suscipit sed nisi. In pharetra sem eget orci posuere pretium.&lt;em&gt;Integer&lt;/em&gt;non eros&lt;strong&gt;&lt;em&gt;scelerisque&lt;/em&gt;&lt;/strong&gt;, consequat lacus id, rutrum felis. Nulla elementum felis urna, at placerat arcu ultricies in.&lt;/div&gt;&lt;ul&gt;&lt;li&gt;Proin elementum sollicitudin sodales.&lt;/li&gt;&lt;li&gt;Nam id erat nec nibh dictum cursus.&lt;/li&gt;&lt;/ul&gt;&lt;blockquote&gt;In et urna eros. Fusce molestie, orci vel laoreet tempus, sem justo blandit magna, at volutpat velit lacus id turpis.&lt;br&gt;Quisque malesuada sem at interdum congue. Aenean dapibus fermentum orci eu euismod.&lt;/blockquote&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;"></div>
+            <div class="trix-events"> 
+                <ul>
+                    <li id="trix-initialize"><span class="indicator"></span><span class="label">trix-initialize</span></li>
+                    <li id="trix-change" class=""><span class="indicator"></span><span class="label">trix-change</span></li>
+                    <li id="trix-selection-change" class=""><span class="indicator"></span><span class="label">trix-selection-change</span></li>
+                    <li id="trix-focus" class=""><span class="indicator"></span><span class="label">trix-focus</span></li>
+                    <li id="trix-blur" class=""><span class="indicator"></span><span class="label">trix-blur</span></li>
+                    <li id="trix-file-accept"><span class="indicator"></span><span class="label">trix-file-accept</span></li>
+                    <li id="trix-attachment-add"><span class="indicator"></span><span class="label">trix-attachment-add</span></li>
+                    <li id="trix-attachment-remove"><span class="indicator"></span><span class="label">trix-attachment-remove</span></li>
+                </ul>
+            </div>
+            <div class="text-area">
+                <h2>Html output in textarea</h2>
+                <textarea spellcheck="false" ng-model="trix" msd-elastic="" ng-model-options="{ updateOn: &#39;blur&#39; }" class="ng-valid ng-dirty ng-touched" style="overflow: hidden; word-wrap: break-word; resize: horizontal; height: 178px;"></textarea>
+            </div>
+        </section>
+        <script src="./files/angular.min.js"></script>
+        <script src="./files/trix.js"></script>
+        <script src="./files/elastic.js"></script>
+        <script src="./files/angular-trix.js"></script>
+        <script src="./files/democtrl.js"></script>
+    
+
+<textarea aria-hidden="true" tabindex="-1" style="position: absolute; top: -999px; right: auto; bottom: auto; left: 0px; overflow: hidden; box-sizing: content-box; padding: 0px; word-wrap: break-word; border: 0px; font-family: &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-weight: normal; font-style: normal; letter-spacing: normal; line-height: 24px; text-transform: none; word-spacing: 0px; text-indent: 0px; min-height: 0px !important; height: 0px !important; width: 962px;"></textarea><iframe id="rufous-sandbox" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" style="position: absolute; visibility: hidden; display: none; width: 0px; height: 0px; padding: 0px; border: none;" src="./files/saved_resource.html"></iframe></body></html>

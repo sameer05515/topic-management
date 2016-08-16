@@ -1,0 +1,48 @@
+//viewAllGroupsController-list
+
+app.controller('viewAllGroupsController-list', function($scope,$http,zettaAppConfig) {
+	
+	var counter=1;
+	$scope.group={};
+
+  $scope.groupObj={"title":"my title","description":""};  
+  $scope.groupsList={};  
+  $scope.fetchGroupList=function(){	 
+			var urrrlll=zettaAppConfig.restServices+"/groups";
+			$http(
+				{
+					method : 'GET',
+					url :urrrlll
+				})
+				.success(function(data) {
+					//alert("Success : "+data);
+					$scope.groupsList=data;
+					
+					$scope.next();
+				})
+				.error(
+				function(data) {
+					alert("Error : "+data);
+				});	 	  
+		  };
+		  
+	$scope.next=function(){
+		$scope.group=$scope.groupsList[counter];
+		counter=(counter>=$scope.groupsList.length-1)?0:(counter+1);
+		
+	};
+	
+	$scope.previous=function(){
+		$scope.group=$scope.groupsList[counter];
+		counter=(counter==0)?($scope.groupsList.length-1):(counter-1);
+		
+	};
+  
+  
+  $scope.fetchGroupList();
+  
+  
+  
+  
+
+});
