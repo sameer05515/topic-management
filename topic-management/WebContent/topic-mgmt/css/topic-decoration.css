@@ -4,3 +4,14 @@
     border: 1px solid rgb(171, 239, 171);
     color: rgb(9, 56, 9);
 }
+
+
+/**########################################################################*/
+
+.sortorder:after {
+  content: '\25b2';   // BLACK UP-POINTING TRIANGLE
+}
+.sortorder.reverse:after {
+  content: '\25bc';   // BLACK DOWN-POINTING TRIANGLE
+}
+/**########################################################################*/

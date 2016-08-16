@@ -41,6 +41,15 @@ app.controller('viewAllTopicsController-list', function($scope,$http,zettaAppCon
   
   $scope.fetchTopicList();
   
+  ////////////////////////
+  $scope.propertyName = 'dateLastModified';
+  $scope.reverse = true;
+  //$scope.friends = friends;
+
+  $scope.sortBy = function(propertyName) {
+    $scope.reverse = ($scope.propertyName === propertyName) ? !$scope.reverse : false;
+    $scope.propertyName = propertyName;
+  };
   
   
   
