@@ -58,7 +58,8 @@
 			  </table>
 			<!--####################-->
 									
-			<div data-ng-repeat="topic in ( filteredItems =(topicsList | filter:searchText |orderBy:'title'))" >	
+			<!-- <div data-ng-repeat="topic in ( filteredItems =(topicsList | filter:searchText |orderBy:'title'))" > -->
+			<div data-ng-repeat="topic in ( filteredItems =(topicsList | filter:searchText |orderBy:propertyName:reverse))" >	
 				<div class="row resultsDisplay">
 					<div class="col-sm-12 col-md-12">
 						<div class="row">
