@@ -2,7 +2,7 @@
 
 app.controller('createTopicController', function($scope,$http,$location,zettaAppConfig) {
 
-  $scope.topicObj={"title":"","description":""};
+  $scope.topicObj={"title":"","description":"", "personal":"false"};
   
   $scope.saveTopicObj=function(){
 	  

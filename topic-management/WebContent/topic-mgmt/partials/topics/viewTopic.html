@@ -38,9 +38,16 @@
 			<!-- /well -->
 						
             <div class="well">
-            	<h4>Related Groups</h4> 
-            	<br/><a href="">grp 1</a>
-            	<br/><a href="">grp 2</a>	            
+            	<h4>Related Groups <!-- <button class="lalChaukor">+</button> --><a class="btn btn-primary" ng-click="fetchGroupList()"><i class="fa fa-plus">Add</i></a></h4> 
+            	
+            	<div ng-repeat="group in groupsList">
+					<input type='checkbox' value="{{group}}" check-list="checked_groups"> {{group.title}} &nbsp;&nbsp;&nbsp;&nbsp;
+				</div>
+				<a class="btn btn-primary" ng-click="saveTopicGroupRelationList()" ng-if="groupsList.length>0">Save</a>
+				<a class="btn btn-primary" ng-click="resetGroupsAndShowTopicGroupRelations()" ng-if="groupsList.length>0">Cancel</a>
+				{{checked_groups}}
+            	<!-- <br/><a href="">grp 1</a> <button class="lalChaukor">-</button><a class="btn btn-primary" href="#/topics-list">Remove<i class="fa fa-minus"></i></a>
+            	<br/><a href="">grp 2</a> <button class="lalChaukor">-</button><a class="btn btn-primary" href="#/topics-list">Remove<i class="fa fa-minus"></i></a> -->            
             </div>
             <!-- /well -->
             

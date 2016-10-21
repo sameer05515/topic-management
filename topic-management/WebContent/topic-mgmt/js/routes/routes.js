@@ -31,6 +31,7 @@ app.config(['$routeProvider', function ($routeProvider) {
 	.when("/views-list/:id", {templateUrl: "partials/views/viewView.html", controller: "viewViewController"})
 	.when("/views/new", {templateUrl: "partials/views/createView.html", controller: "createViewController"})
 	.when("/views/:id", {templateUrl: "partials/views/updateView.html" , controller: "updateViewController"})
+	.when("/site-updates", {templateUrl: "partials/help/updates.html" , controller: "topicUpdatesController"})
 	// Blog
     .when("/blog", {templateUrl: "partials/blog.html"/* , controller: "BlogCtrl" */})
     .when("/blog/post", {templateUrl: "partials/blog_item.html"/* , controller: "BlogCtrl" */})

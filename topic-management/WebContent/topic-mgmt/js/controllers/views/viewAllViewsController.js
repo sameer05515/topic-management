@@ -3,7 +3,7 @@
 app.controller('viewAllViewsController', function($scope,$http,zettaAppConfig) {
 
   $scope.viewObj={"title":"my title","description":""};  
-  $scope.viewsList={};  
+  $scope.viewsList=[];  
   $scope.fetchViewList=function(){	 
 			var urrrlll=zettaAppConfig.restServices+"/views";
 			$http(

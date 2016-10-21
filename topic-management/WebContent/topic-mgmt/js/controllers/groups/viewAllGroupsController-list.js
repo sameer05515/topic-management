@@ -1,19 +1,20 @@
 //viewAllGroupsController-list
 
-app.controller('viewAllGroupsController-list', function($scope,$http,zettaAppConfig) {
+app.controller('viewAllGroupsController-list', function($scope,$http,zettaAppConfig,TopicManagementServices) {
 	
 	var counter=1;
 	$scope.group={};
 
   $scope.groupObj={"title":"my title","description":""};  
-  $scope.groupsList={};  
+  $scope.groupsList=[];  
   $scope.fetchGroupList=function(){	 
-			var urrrlll=zettaAppConfig.restServices+"/groups";
-			$http(
-				{
-					method : 'GET',
-					url :urrrlll
-				})
+//			var urrrlll=zettaAppConfig.restServices+"/groups";
+//			$http(
+//				{
+//					method : 'GET',
+//					url :urrrlll
+//				})
+	  TopicManagementServices.fetchGroupList()
 				.success(function(data) {
 					//alert("Success : "+data);
 					$scope.groupsList=data;

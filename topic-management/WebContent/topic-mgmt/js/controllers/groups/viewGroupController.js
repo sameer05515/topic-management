@@ -28,7 +28,7 @@ app.controller('viewGroupController', function($scope,$http,$location,$routePara
 	
 
   $scope.groupObj={"title":"my title","description":""};  
-  $scope.groupsList={};  
+  $scope.groupsList=[];  
   $scope.fetchGroupList=function(){	 
 			var urrrlll=zettaAppConfig.restServices+"/groups";
 			$http(

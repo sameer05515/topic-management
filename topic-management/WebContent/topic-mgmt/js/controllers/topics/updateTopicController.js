@@ -2,7 +2,7 @@
 
 app.controller('updateTopicController', function($scope,$http,$location,$routeParams,zettaAppConfig) {
 
-  $scope.topicObj={"title":"my title","description":""};
+  $scope.topicObj={"title":"my title","description":"" , "personal":"false"};
   
   $scope.fetchTopicObj=function(){	  
 	  var urrrlll=zettaAppConfig.restServices+"/topics";
@@ -12,7 +12,7 @@ app.controller('updateTopicController', function($scope,$http,$location,$routePa
 					url :urrrlll+"/"+$routeParams.id
 				})
 				.success(function(data) {
-					//alert("Success : "+data);
+					//alert(angular.toJson(data));
 					$scope.topicObj=data;
 				}).error(function(data) {
 					alert("Error : "+data);
@@ -28,7 +28,7 @@ app.controller('updateTopicController', function($scope,$http,$location,$routePa
 					data: $scope.topicObj
 				})
 				.success(function(data) {
-					//alert("Success : "+data.message);					
+					//alert($scope.topicObj.personal);					
 					$location.path('/topics-list/'+$routeParams.id);
 				}).error(function(data) {							
 					alert("Error : "+data.message);

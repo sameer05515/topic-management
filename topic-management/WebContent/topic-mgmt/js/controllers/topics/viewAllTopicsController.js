@@ -3,7 +3,7 @@
 app.controller('viewAllTopicsController', function($scope,$http,zettaAppConfig) {
 
   $scope.topicObj={"title":"my title","description":""};  
-  $scope.topicsList={};  
+  $scope.topicsList=[];  
   $scope.fetchTopicList=function(){	 
 			var urrrlll=zettaAppConfig.restServices+"/topics";
 			$http(

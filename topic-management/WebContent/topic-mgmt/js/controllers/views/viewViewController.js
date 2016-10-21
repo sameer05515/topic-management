@@ -28,7 +28,7 @@ app.controller('viewViewController', function($scope,$http,$location,$routeParam
 	
 
   $scope.viewObj={"title":"my title","description":""};  
-  $scope.viewsList={};  
+  $scope.viewsList=[];  
   $scope.fetchViewList=function(){	 
 			var urrrlll=zettaAppConfig.restServices+"/views";
 			$http(
