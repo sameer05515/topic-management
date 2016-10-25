@@ -18,6 +18,10 @@
 			<div class="well">
 				<h4>Topic,Group,View CURD</h4>
 				<p>Here all the operations related to Topic,Group,View CURD, and UI generation activities </p>
+				
+				<div data-ng-repeat="tgvcurd in topic.topicGroupViewCURD" >
+					<p><i class="fa fa-clock-o"></i><b><span>[{{tgvcurd.date}}]</span></b> [{{tgvcurd.description}}] </p>
+				</div>
 			</div>
 			
 		</div>
@@ -26,9 +30,9 @@
 			<div class="well">
 				<h4>Topic,Group,View relation CURD</h4>
 				<p>Here all the operations related to Topic,Group,View CURD, and UI generation activities </p>
-				<p><i class="fa fa-clock-o"></i><b><span>[13/Oct/2016]</span></b> Last Modified on </p>
 				
-				<div data-ng-repeat="topic in ( filteredItems =(topicsList | filter:searchText |orderBy:propertyName:reverse))" >
+				<div data-ng-repeat="tgvcurdrel in topic.topicGroupViewRelationCURD" >
+					<p><i class="fa fa-clock-o"></i><b><span>[{{tgvcurdrel.date}}]</span></b> [{{tgvcurdrel.description}}] </p>
 				</div>
 			</div>	
 			

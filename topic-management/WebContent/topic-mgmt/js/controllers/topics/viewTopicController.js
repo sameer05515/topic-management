@@ -24,6 +24,8 @@ app
 
 					$scope.groupsList = [];
 
+					$scope.topicGroupsRelationList = [];
+
 					$scope.checked_groups = [];
 					/** Variable Declaration end ################################ */
 
@@ -88,6 +90,7 @@ app
 
 						var topicGroupRelationResource = {};
 						topicGroupRelationResource.id = [];
+						$scope.topicGroupsRelationList=[];
 						// topicGroupRelationResource.groupIdList=[];
 
 						topicGroupRelationResource.id.push($routeParams.id);
@@ -101,9 +104,10 @@ app
 													+ angular.toJson(data));
 											$log
 													.log("successfully saved relations, now fetching will be started soon!!!");
+											$scope.topicGroupsRelationList = data;
 										}).error(function(data) {
 
-									$log.log("Error in saving relations!!!");
+									$log.log("Error in saving relations!!!"+data);
 								});
 
 					};
@@ -145,6 +149,7 @@ app
 													+ angular.toJson(data));
 											$log
 													.log("successfully saved relations, now fetching will be started soon!!!");
+											$scope.fetchTopicGroupRelationList();
 										}).error(function(data) {
 
 									$log.log("Error in saving relations!!!");
