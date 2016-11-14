@@ -26,7 +26,7 @@
           Number of filtered items: {{filteredItems.length}} <br/>
 		  <p ng-hide="filteredItems.length">There is no result</p>
 		  
-		  <a class="btn btn-primary" href="#/views/new">Create New View<i class="fa fa-angle-right"></i></a>
+		  <a class="btn btn-xs btn-primary" href="#/views/new">Create New View<i class="fa fa-angle-right"></i></a>
 		</div>
 		<!-- /well -->			
 	</div>		
@@ -38,15 +38,15 @@
 			<table class="friends">
 				<tr>
 				  <th>
-					<button ng-click="sortBy('title')">Title</button>
+					<button class="btn btn-xs btn-primary" ng-click="sortBy('title')">Title</button>
 					<span class="sortorder" ng-show="propertyName === 'title'" ng-class="{reverse: reverse}"></span>
 				  </th>
 				  <th>
-					<button ng-click="sortBy('dateLastModified')">Last Modified</button>
+					<button class="btn btn-xs btn-primary" ng-click="sortBy('dateLastModified')">Last Modified</button>
 					<span class="sortorder" ng-show="propertyName === 'dateLastModified'" ng-class="{reverse: reverse}"></span>
 				  </th>
 				  <th>
-					<button ng-click="sortBy('dateCreated')">Creation Date</button>
+					<button class="btn btn-xs btn-primary" ng-click="sortBy('dateCreated')">Creation Date</button>
 					<span class="sortorder" ng-show="propertyName === 'dateCreated'" ng-class="{reverse: reverse}"></span>
 				  </th>
 				</tr>
@@ -71,9 +71,9 @@
 					        </div>
 					        
 					        <div class="col-md-11">
-					            <h3>
+					            <h4>
 					            	<a href="#/views-list/{{view.id}}">{{view.title}}</a>
-					            </h3>
+					            </h4>
 					
 					            <p>Related Groups 
 					            	<a href="">grp 1</a> , 
@@ -95,7 +95,7 @@
 					            
 					            <p><i class="fa fa-clock-o"></i> Created on <b><span ng-bind="view.dateCreated | date:'MMM/dd/yyyy hh:mm:ss a'"></span></b></p>					
 					            
-					            <a class="btn btn-primary" href="#/views-list/{{view.id}}">Read More <i class="fa fa-angle-right"></i></a>
+					            <a class="btn btn-xs btn-primary" href="#/views-list/{{view.id}}">Read More <i class="fa fa-angle-right"></i></a>
 					        </div>			
 						</div>												
 					</div>

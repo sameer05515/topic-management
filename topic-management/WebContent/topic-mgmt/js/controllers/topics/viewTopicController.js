@@ -9,10 +9,10 @@ app
 					/** Variable Declaration start */
 					$scope.topic = {};
 
-					$scope.topicObj = {
+					/*$scope.topicObj = {
 						"title" : "my title",
 						"description" : ""
-					};
+					};*/
 
 					var counter = 1;
 
@@ -77,7 +77,7 @@ app
 						TopicManagementServices.fetchGroupList().success(
 								function(data) {
 									$scope.groupsList = data;
-									// $log.log(data);
+									//$scope.fetchAndRemoveExistingRelations();
 								});
 					};
 
@@ -103,7 +103,7 @@ app
 											$log.log("data : "
 													+ angular.toJson(data));
 											$log
-													.log("successfully saved relations, now fetching will be started soon!!!");
+													.log("successfully fetched relations for given topic id : "+$routeParams.id+", !!!");
 											$scope.topicGroupsRelationList = data;
 										}).error(function(data) {
 
@@ -111,6 +111,48 @@ app
 								});
 
 					};
+					
+					/*$scope.fetchAndRemoveExistingRelations= function() {
+						
+						var topicGroupRelationResource = {};
+						topicGroupRelationResource.id = [];
+						$scope.topicGroupsRelationList=[];
+						
+						$scope.groupsListAfterRemoveExistingRelations = [];
+
+						topicGroupRelationResource.id.push($routeParams.id);
+
+						TopicManagementServices
+								.fetchTopicGroupRelationList(
+										topicGroupRelationResource)
+								.success(
+										function(data) {
+											$log.log("data : "
+													+ angular.toJson(data));
+											$log
+													.log("successfully fetched relations for given topic id : "+$routeParams.id+", !!!");
+											$scope.topicGroupsRelationList = data;
+											
+											for (var tObj in $scope.groupsList){
+												
+												var groupNotAdded=true;
+												for(var tgrObj in $scope.topicGroupsRelationList ){
+													if(tObj.id == tgrObj.groups.id){
+														groupNotAdded=false;
+													}
+												}
+												
+												if(groupNotAdded){
+													$scope.groupsListAfterRemoveExistingRelations.push(tObj);
+												}
+											}
+											
+											
+										}).error(function(data) {
+
+									$log.log("Error in saving relations!!!"+data);
+								});
+					};*/
 
 					$scope.saveTopicGroupRelationList = function() {
 
@@ -154,6 +196,8 @@ app
 
 									$log.log("Error in saving relations!!!");
 								});
+						
+						$scope.resetGroupsAndShowTopicGroupRelations();
 
 						// $log.log("Topic Group relations will be soon
 						// saved!!!");
