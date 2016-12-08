@@ -1,0 +1,87 @@
+<div class="container">
+
+
+	<div class="row">
+
+		<div class="col-lg-4 topicMgmtShowHideAnimation" ng-hide="showList">
+
+			<!-- ############################## -->
+			<h4>Topic Search:</h4>
+
+			<div class="input-group">
+				<input type="text" data-ng-model="searchText" class="form-control">
+			</div>
+			<!-- /input-group -->
+			You are typing "{{searchText}}" <br /> Number of filtered items:
+			{{filteredItems.length}} <br />
+			<p ng-hide="filteredItems.length">There is no result</p>
+			<!-- ############################## -->
+
+			<!--####################-->
+			<table class="friends">
+				<tr>
+					<th>
+						<button class="btn btn-xs btn-primary" ng-click="sortBy('title')">Title</button>
+						<span class="sortorder" ng-show="propertyName === 'title'"
+						ng-class="{reverse: reverse}"></span>
+					</th>
+					<th>
+						<button class="btn btn-xs btn-primary"
+							ng-click="sortBy('dateLastModified')">Last Modified</button> <span
+						class="sortorder" ng-show="propertyName === 'dateLastModified'"
+						ng-class="{reverse: reverse}"></span>
+					</th>
+					<th>
+						<button class="btn btn-xs btn-primary"
+							ng-click="sortBy('dateCreated')">Creation Date</button> <span
+						class="sortorder" ng-show="propertyName === 'dateCreated'"
+						ng-class="{reverse: reverse}"></span>
+					</th>
+				</tr>
+
+			</table>
+			<!--####################-->
+			
+			<div 
+				data-ng-repeat="topic in ( filteredItems =(topicsList | filter:searchText |orderBy:propertyName:reverse))">
+				<div class="row resultsDisplay">
+					<div class="row">
+						<span class="glyphicon glyphicon-search" aria-hidden="true">
+							<a data-ng-click="showAt($index)"> {{topic.title}} </a>
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-lg-8">
+
+			<a class="btn btn-xs btn-primary" ng-click="previous()"><i
+				class="fa fa-plus">previous</i></a> <a class="btn btn-xs btn-primary"
+				ng-click="next()"><i class="fa fa-plus">next</i></a>
+				
+			<a class="btn btn-xs btn-primary"
+				ng-click="showList=!showList"><i class="fa fa-plus">Show List</i></a>
+			<h1 class="page-header">
+				Topic <small>: {{topic.title}}</small>
+			</h1>
+
+			<p>
+				<i class="fa fa-clock-o"></i> Last Modified on <b><span
+					ng-bind="topic.dateLastModified | date:'MMM/dd/yyyy hh:mm:ss a'"></span></b>
+			</p>
+			<p>
+				<i class="fa fa-clock-o"></i> Created on <b><span
+					ng-bind="topic.dateCreated | date:'MMM/dd/yyyy hh:mm:ss a'"></span></b>
+			</p>
+
+			<hr>
+			<div class="resultsDisplay" ng-bind-html="topic.description"></div>
+			<hr>
+		</div>
+
+
+	</div>
+
+
+</div>

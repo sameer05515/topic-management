@@ -10,6 +10,8 @@ app.factory('TopicManagementServices', [
 
 				return a + b;
 			};
+			
+			/**Fetch all Topics, Groups, Views list*/
 
 			TopicManagementServices.fetchGroupList = function() {
 
@@ -20,12 +22,21 @@ app.factory('TopicManagementServices', [
 
 				return $http.get(zettaAppConfig.restServices + "/topics");
 			};
+			
+			TopicManagementServices.fetchViewList = function() {
+
+				return $http.get(zettaAppConfig.restServices + "/views");
+			};
+			
+			/**Fetch Topic , Group, View object on basis of given ID*/
 
 			TopicManagementServices.fetchTopicObj = function(topicId) {
 
 				return $http.get(zettaAppConfig.restServices + "/topics" + "/"
 						+ topicId);
 			};
+			
+			/**Save, Fetch TopicGroupRelation */
 
 			TopicManagementServices.saveTopicGroupRelationList = function(
 					topicGroupRelationResource) {
@@ -42,7 +53,7 @@ app.factory('TopicManagementServices', [
 				return $http(req);
 			};
 
-			TopicManagementServices.fetchTopicGroupRelationList = function(
+			TopicManagementServices.fetchTopicGroupRelationListForTopic = function(
 					topicGroupRelationResource) {
 
 				var req = {
@@ -52,6 +63,68 @@ app.factory('TopicManagementServices', [
 						'Content-Type' : 'application/json'
 					},
 					params : angular.fromJson(topicGroupRelationResource)
+				};
+
+				return $http(req);
+			};
+			
+			TopicManagementServices.fetchTopicGroupRelationListForGroup = function(
+					topicGroupRelationResource) {
+
+				var req = {
+					method : 'GET',
+					url : zettaAppConfig.restServices + "/tgservices/groups",
+					headers : {
+						'Content-Type' : 'application/json'
+					},
+					params : angular.fromJson(topicGroupRelationResource)
+				};
+
+				return $http(req);
+			};
+			
+			/**Save, Fetch GroupViewRelation */
+
+			TopicManagementServices.saveGroupViewRelationList = function(
+					groupViewRelationResource) {
+
+				var req = {
+					method : 'POST',
+					url : zettaAppConfig.restServices + "/gvservices",
+					headers : {
+						'Content-Type' : 'application/json'
+					},
+					data : angular.fromJson(groupViewRelationResource)
+				};
+
+				return $http(req);
+			};
+
+			TopicManagementServices.fetchGroupViewRelationListForGroup = function(
+					groupViewRelationResource) {
+
+				var req = {
+					method : 'GET',
+					url : zettaAppConfig.restServices + "/gvservices/groups",
+					headers : {
+						'Content-Type' : 'application/json'
+					},
+					params : angular.fromJson(groupViewRelationResource)
+				};
+
+				return $http(req);
+			};
+			
+			TopicManagementServices.fetchGroupViewRelationListForView = function(
+					groupViewRelationResource) {
+
+				var req = {
+					method : 'GET',
+					url : zettaAppConfig.restServices + "/gvservices/views",
+					headers : {
+						'Content-Type' : 'application/json'
+					},
+					params : angular.fromJson(groupViewRelationResource)
 				};
 
 				return $http(req);

@@ -2,7 +2,7 @@
 
 app
 		.controller(
-				'viewAllGroupsController-list',
+				'showAllGroupsController-list',
 				function($scope, $http, zettaAppConfig, TopicManagementServices) {
 
 					var counter = 1;

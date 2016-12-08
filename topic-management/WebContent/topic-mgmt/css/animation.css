@@ -41,3 +41,15 @@
     padding-bottom: 5px;
     padding-left: 5px;
 }
+
+/**Topic management show hide a div animation*/
+.topicMgmtShowHideAnimation.ng-hide-add,
+.topicMgmtShowHideAnimation.ng-hide-remove {
+  -webkit-transition: 1s ease-in-out opacity;
+  transition: 1s ease-in-out opacity;
+  opacity: 1;
+}
+
+.topicMgmtShowHideAnimation.ng-hide {
+  opacity: 0;
+}

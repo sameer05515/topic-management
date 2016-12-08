@@ -1,6 +1,6 @@
 //viewAllTopicsController-list
 
-app.controller('viewAllTopicsController-list', function($scope,$http,zettaAppConfig) {
+app.controller('showAllTopicsController-list', function($scope,$http,zettaAppConfig) {
 	
 	var counter=1;
 	$scope.topic={};

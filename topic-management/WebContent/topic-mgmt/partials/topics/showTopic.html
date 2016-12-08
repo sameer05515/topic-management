@@ -38,9 +38,11 @@
 					<i class="fa fa-clock-o"></i> Created on <b><span
 						ng-bind="topic.dateCreated | date:'MMM/dd/yyyy hh:mm:ss a'"></span></b>
 				</p>
-				<a class="btn btn-xs btn-primary" href="#/topics/{{topic.id}}">Modify <i
-					class="fa fa-angle-right"></i></a> <a class="btn btn-xs btn-primary"
-					href="#/topics-list">Back to list <i class="fa fa-angle-right"></i></a>
+				<a class="btn btn-xs btn-primary" href="#/topics/{{topic.id}}">Modify
+					<i class="fa fa-angle-right"></i>
+				</a> <a class="btn btn-xs btn-primary" href="#/topics-list">Back to
+					list <i class="fa fa-angle-right"></i>
+				</a>
 			</div>
 			<!-- /well -->
 
@@ -52,37 +54,40 @@
 						class="fa fa-plus">Add</i></a>
 				</h4>
 
-				<div ng-repeat="group in groupsList">
+				<div
+					ng-repeat="group in (filteredGroupItems=(groupsList| filter:filterAlreadyAddedGroup))">
 					<input type='checkbox' value="{{group}}"
 						check-list="checked_groups"> {{group.title}}
 					&nbsp;&nbsp;&nbsp;&nbsp;
 				</div>
-				<a class="btn btn-xs btn-primary" ng-click="saveTopicGroupRelationList()"
-					ng-if="groupsList.length>0">Save</a> <a class="btn btn-xs btn-primary"
+				<a class="btn btn-xs btn-primary"
+					ng-click="saveTopicGroupRelationList()"
+					ng-if="filteredGroupItems.length>0">Save</a> 
+					
+					<a class="btn btn-xs btn-primary"
 					ng-click="resetGroupsAndShowTopicGroupRelations()"
-					ng-if="groupsList.length>0">Cancel</a> <!-- {{checked_groups}} -->
+					ng-if="filteredGroupItems.length>0">Cancel</a>
+				<!-- {{checked_groups}} -->
 
-				<div ng-repeat="topicGroupsRelation in topicGroupsRelationList">					
-					<a href="#/groups-list/{{topicGroupsRelation.groups.id}}">{{topicGroupsRelation.groups.title}}</a>					
+				<div ng-repeat="topicGroupsRelation in topicGroupsRelationList">
+					<a href="#/groups-list/{{topicGroupsRelation.groups.id}}">{{topicGroupsRelation.groups.title}}</a>
 					<a class="btn btn-xs btn-primary" href="#">Remove<i
 						class="fa fa-minus"></i></a>
-				</div>				
+				</div>
 			</div>
 			<!-- /well -->
 
 			<div class="well">
+				<!-- Related Views lists comes from all Views which are part of groups to which current Topic is associated with. -->
 				<h4>Related Views</h4>
-				<br />
-				<a href="">view 1</a> <br />
-				<a href="">view 2</a>
+				<br /> <a href="">view 1</a> <br /> <a href="">view 2</a>
 			</div>
 			<!-- /well -->
 
 			<div class="well">
+				<!-- Related Topics lists comes from all Topics which are part of groups to which current Topic is associated with. -->
 				<h4>Related Topics</h4>
-				<br />
-				<a href="">topic 1</a> <br />
-				<a href="">topic 2</a>
+				<br /> <a href="">topic 1</a> <br /> <a href="">topic 2</a>
 			</div>
 			<!-- /well -->
 

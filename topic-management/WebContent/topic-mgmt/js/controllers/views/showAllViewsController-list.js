@@ -2,7 +2,7 @@
 
 app
 		.controller(
-				'viewAllViewsController-list',
+				'showAllViewsController-list',
 				function($scope, $http, zettaAppConfig) {
 
 					var counter = 1;

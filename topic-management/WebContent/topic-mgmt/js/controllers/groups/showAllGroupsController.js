@@ -1,6 +1,6 @@
 //viewAllGroupsController
 
-app.controller('viewAllGroupsController', function($scope,$http,zettaAppConfig) {
+app.controller('showAllGroupsController', function($scope,$http,zettaAppConfig) {
 
   $scope.groupObj={"title":"my title","description":""};  
   $scope.groupsList={};  

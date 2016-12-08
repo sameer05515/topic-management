@@ -1,6 +1,6 @@
 //viewAllViewsController
 
-app.controller('viewAllViewsController', function($scope,$http,zettaAppConfig) {
+app.controller('showAllViewsController', function($scope,$http,zettaAppConfig) {
 
   $scope.viewObj={"title":"my title","description":""};  
   $scope.viewsList=[];  

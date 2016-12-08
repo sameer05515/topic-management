@@ -12,11 +12,11 @@ var app = angular.module('topicMgmtApp', ['ngRoute','ngAnimate','angularTrix','n
        "serviceBaseNews": "https://dev-api.zetta.concentrix.com:8443/ZettaNewsService/news",
        "serviceBaseSurvey": "https://dev-api.zetta.concentrix.com:8443/ZettaSurveyService/survey",
        "appPath": "/ZettaUI/",
-	   "restServices":"http://127.0.0.1:9999/RestServices/rest"
+	   "restServices":"http://127.0.0.1:8888/RestServices/rest"
     });*/
 
 app.constant("zettaAppConfig", {
-   "restServices":"http://127.0.0.1:9999/RestServices/rest"
+   "restServices":"http://127.0.0.1:8888/RestServices/rest"
 });
 
 app.directive('checkList', function() {
