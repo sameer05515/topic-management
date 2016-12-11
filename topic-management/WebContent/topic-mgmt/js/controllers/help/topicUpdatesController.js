@@ -6,7 +6,7 @@ app
 		.controller(
 				'topicUpdatesController',
 				function($scope/* , $http */, $location, $routeParams,
-						zettaAppConfig, TopicManagementServices) {
+						topicMgmtAppConfig, TopicManagementServices) {
 
 					/** Variable Declaration start */
 					var topic = {};

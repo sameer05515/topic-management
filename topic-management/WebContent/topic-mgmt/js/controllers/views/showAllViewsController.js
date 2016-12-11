@@ -1,11 +1,11 @@
 //viewAllViewsController
 
-app.controller('showAllViewsController', function($scope,$http,zettaAppConfig) {
+app.controller('showAllViewsController', function($scope,$http,topicMgmtAppConfig) {
 
   $scope.viewObj={"title":"my title","description":""};  
   $scope.viewsList=[];  
   $scope.fetchViewList=function(){	 
-			var urrrlll=zettaAppConfig.restServices+"/views";
+			var urrrlll=topicMgmtAppConfig.restServices+"/views";
 			$http(
 				{
 					method : 'GET',

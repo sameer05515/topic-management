@@ -3,7 +3,7 @@
 app
 		.controller(
 				'showViewController',
-				function($scope,$log, $http, $location, $routeParams, zettaAppConfig, TopicManagementServices) {
+				function($scope,$log, $http, $location, $routeParams, topicMgmtAppConfig, TopicManagementServices) {
 
 					$scope.view = {};
 
@@ -19,7 +19,7 @@ app
 					$scope.groupViewRelationList = [];
 
 					$scope.fetchViewObj = function() {
-						var urrrlll = zettaAppConfig.restServices + "/views";
+						var urrrlll = topicMgmtAppConfig.restServices + "/views";
 						$http({
 							method : 'GET',
 							url : urrrlll + "/" + $routeParams.id
@@ -44,7 +44,7 @@ app
 					$scope.groupViewRelationList = [];
 
 					$scope.fetchViewList = function() {
-						var urrrlll = zettaAppConfig.restServices + "/views";
+						var urrrlll = topicMgmtAppConfig.restServices + "/views";
 						$http({
 							method : 'GET',
 							url : urrrlll

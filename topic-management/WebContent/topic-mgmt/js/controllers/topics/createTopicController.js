@@ -1,12 +1,12 @@
 //createTopicController
 
-app.controller('createTopicController', function($scope,$http,$location,zettaAppConfig) {
+app.controller('createTopicController', function($scope,$http,$location,topicMgmtAppConfig) {
 
   $scope.topicObj={"title":"","description":"", "personal":"false"};
   
   $scope.saveTopicObj=function(){
 	  
-	  var urrrlll=zettaAppConfig.restServices+"/topics";
+	  var urrrlll=topicMgmtAppConfig.restServices+"/topics";
 		$http(
 				{
 					method : 'POST',					

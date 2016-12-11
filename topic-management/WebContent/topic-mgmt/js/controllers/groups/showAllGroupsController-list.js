@@ -3,7 +3,7 @@
 app
 		.controller(
 				'showAllGroupsController-list',
-				function($scope, $http, zettaAppConfig, TopicManagementServices) {
+				function($scope, $http, topicMgmtAppConfig, TopicManagementServices) {
 
 					var counter = 1;
 					$scope.group = {};
@@ -14,7 +14,7 @@ app
 					};
 					$scope.groupsList = [];
 					$scope.fetchGroupList = function() {
-						// var urrrlll=zettaAppConfig.restServices+"/groups";
+						// var urrrlll=topicMgmtAppConfig.restServices+"/groups";
 						// $http(
 						// {
 						// method : 'GET',

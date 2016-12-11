@@ -3,7 +3,7 @@
 app
 		.controller(
 				'showAllTopicsController',
-				function($scope, $http, zettaAppConfig) {
+				function($scope, $http, topicMgmtAppConfig) {
 
 					$scope.topicObj = {
 						"title" : "my title",
@@ -16,7 +16,7 @@ app
 					$scope.showList=false;
 
 					$scope.fetchTopicList = function() {
-						var urrrlll = zettaAppConfig.restServices + "/topics";
+						var urrrlll = topicMgmtAppConfig.restServices + "/topics";
 						$http({
 							method : 'GET',
 							url : urrrlll

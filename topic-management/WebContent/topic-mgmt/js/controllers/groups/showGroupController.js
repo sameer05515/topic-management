@@ -4,7 +4,7 @@ app
 		.controller(
 				'showGroupController',
 				function($scope, $http, $log, $location, $routeParams,
-						zettaAppConfig, TopicManagementServices) {
+						topicMgmtAppConfig, TopicManagementServices) {
 
 					$scope.group = {};
 
@@ -15,7 +15,7 @@ app
 					};
 
 					$scope.fetchGroupObj = function() {
-						var urrrlll = zettaAppConfig.restServices + "/groups";
+						var urrrlll = topicMgmtAppConfig.restServices + "/groups";
 						$http({
 							method : 'GET',
 							url : urrrlll + "/" + $routeParams.id
@@ -50,7 +50,7 @@ app
 					$scope.checked_view = [];
 
 					$scope.fetchGroupList = function() {
-						var urrrlll = zettaAppConfig.restServices + "/groups";
+						var urrrlll = topicMgmtAppConfig.restServices + "/groups";
 						$http({
 							method : 'GET',
 							url : urrrlll

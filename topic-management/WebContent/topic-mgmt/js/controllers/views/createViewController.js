@@ -1,12 +1,12 @@
 //createViewController
 
-app.controller('createViewController', function($scope,$http,$location,zettaAppConfig) {
+app.controller('createViewController', function($scope,$http,$location,topicMgmtAppConfig) {
 
   $scope.viewObj={"title":"","description":""};
   
   $scope.saveViewObj=function(){
 	  
-	  var urrrlll=zettaAppConfig.restServices+"/views";
+	  var urrrlll=topicMgmtAppConfig.restServices+"/views";
 		$http(
 				{
 					method : 'POST',					

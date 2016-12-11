@@ -1,11 +1,11 @@
 //viewAllGroupsController
 
-app.controller('showAllGroupsController', function($scope,$http,zettaAppConfig) {
+app.controller('showAllGroupsController', function($scope,$http,topicMgmtAppConfig) {
 
   $scope.groupObj={"title":"my title","description":""};  
   $scope.groupsList={};  
   $scope.fetchGroupList=function(){	 
-			var urrrlll=zettaAppConfig.restServices+"/groups";
+			var urrrlll=topicMgmtAppConfig.restServices+"/groups";
 			$http(
 				{
 					method : 'GET',

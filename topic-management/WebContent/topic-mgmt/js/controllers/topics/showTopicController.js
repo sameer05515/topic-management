@@ -4,7 +4,7 @@ app
 		.controller(
 				'showTopicController',
 				function($scope/* , $http */, $log, $location, $routeParams,
-						zettaAppConfig, TopicManagementServices) {
+						topicMgmtAppConfig, TopicManagementServices) {
 
 					/** Variable Declaration start */
 					$scope.topic = {};

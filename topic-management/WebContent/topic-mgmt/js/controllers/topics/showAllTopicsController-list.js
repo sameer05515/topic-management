@@ -1,14 +1,16 @@
 //viewAllTopicsController-list
 
-app.controller('showAllTopicsController-list', function($scope,$http,zettaAppConfig) {
+app.controller('showAllTopicsController-list', function($scope,$http,$log,topicMgmtAppConfig) {
 	
 	var counter=1;
 	$scope.topic={};
 
   $scope.topicObj={"title":"my title","description":""};  
   $scope.topicsList=[];  
+  $scope.showPrivateTopics=false;
+  
   $scope.fetchTopicList=function(){	 
-			var urrrlll=zettaAppConfig.restServices+"/topics";
+			var urrrlll=topicMgmtAppConfig.restServices+"/topics";
 			$http(
 				{
 					method : 'GET',
@@ -35,6 +37,24 @@ app.controller('showAllTopicsController-list', function($scope,$http,zettaAppCon
 	$scope.previous=function(){
 		$scope.topic=$scope.topicsList[counter];
 		counter=(counter==0)?($scope.topicsList.length-1):(counter-1);
+		
+	};
+	
+	$scope.filterPrivateTopics = function(value) {
+//	    var tgrObj = $scope.topicGroupsRelationList;
+//	    for (var i = 0; i < tgrObj.length; i++) {
+//	        // Search every object in the job.data array for a match. 
+//	        // If found return false to remove this object from the results
+//	        if (tgrObj[i].groups.id === value.id) {
+//	            return false;
+//	        }
+//	    }
+//		return true;
+		
+		var showValue=$scope.showPrivateTopics;
+		$log.log("value.personal : " + value.personal + " $scope.showPrivateTopics : "+showValue);
+		return (showValue||!value.personal);
+		
 		
 	};
   

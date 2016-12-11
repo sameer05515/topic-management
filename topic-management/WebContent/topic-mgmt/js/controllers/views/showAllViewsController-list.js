@@ -3,7 +3,7 @@
 app
 		.controller(
 				'showAllViewsController-list',
-				function($scope, $http, zettaAppConfig) {
+				function($scope, $http, topicMgmtAppConfig) {
 
 					var counter = 1;
 					$scope.view = {};
@@ -14,7 +14,7 @@ app
 					};
 					$scope.viewsList = [];
 					$scope.fetchViewList = function() {
-						var urrrlll = zettaAppConfig.restServices + "/views";
+						var urrrlll = topicMgmtAppConfig.restServices + "/views";
 						$http({
 							method : 'GET',
 							url : urrrlll

@@ -1,12 +1,12 @@
 //createGroupController
 
-app.controller('createGroupController', function($scope,$http,$location,zettaAppConfig) {
+app.controller('createGroupController', function($scope,$http,$location,topicMgmtAppConfig) {
 
   $scope.groupObj={"title":"","description":""};
   
   $scope.saveGroupObj=function(){
 	  
-	  var urrrlll=zettaAppConfig.restServices+"/groups";
+	  var urrrlll=topicMgmtAppConfig.restServices+"/groups";
 		$http(
 				{
 					method : 'POST',					

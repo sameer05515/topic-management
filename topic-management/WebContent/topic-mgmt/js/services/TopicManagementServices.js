@@ -1,8 +1,8 @@
 app.factory('TopicManagementServices', [
 		'$http',
 		'$routeParams',
-		'zettaAppConfig',
-		function($http, $routeParams, zettaAppConfig) {
+		'topicMgmtAppConfig',
+		function($http, $routeParams, topicMgmtAppConfig) {
 
 			var TopicManagementServices = {};
 
@@ -15,24 +15,24 @@ app.factory('TopicManagementServices', [
 
 			TopicManagementServices.fetchGroupList = function() {
 
-				return $http.get(zettaAppConfig.restServices + "/groups");
+				return $http.get(topicMgmtAppConfig.restServices + "/groups");
 			};
 
 			TopicManagementServices.fetchTopicList = function() {
 
-				return $http.get(zettaAppConfig.restServices + "/topics");
+				return $http.get(topicMgmtAppConfig.restServices + "/topics");
 			};
 			
 			TopicManagementServices.fetchViewList = function() {
 
-				return $http.get(zettaAppConfig.restServices + "/views");
+				return $http.get(topicMgmtAppConfig.restServices + "/views");
 			};
 			
 			/**Fetch Topic , Group, View object on basis of given ID*/
 
 			TopicManagementServices.fetchTopicObj = function(topicId) {
 
-				return $http.get(zettaAppConfig.restServices + "/topics" + "/"
+				return $http.get(topicMgmtAppConfig.restServices + "/topics" + "/"
 						+ topicId);
 			};
 			
@@ -43,7 +43,7 @@ app.factory('TopicManagementServices', [
 
 				var req = {
 					method : 'POST',
-					url : zettaAppConfig.restServices + "/tgservices",
+					url : topicMgmtAppConfig.restServices + "/tgservices",
 					headers : {
 						'Content-Type' : 'application/json'
 					},
@@ -58,7 +58,7 @@ app.factory('TopicManagementServices', [
 
 				var req = {
 					method : 'GET',
-					url : zettaAppConfig.restServices + "/tgservices/topics",
+					url : topicMgmtAppConfig.restServices + "/tgservices/topics",
 					headers : {
 						'Content-Type' : 'application/json'
 					},
@@ -73,7 +73,7 @@ app.factory('TopicManagementServices', [
 
 				var req = {
 					method : 'GET',
-					url : zettaAppConfig.restServices + "/tgservices/groups",
+					url : topicMgmtAppConfig.restServices + "/tgservices/groups",
 					headers : {
 						'Content-Type' : 'application/json'
 					},
@@ -90,7 +90,7 @@ app.factory('TopicManagementServices', [
 
 				var req = {
 					method : 'POST',
-					url : zettaAppConfig.restServices + "/gvservices",
+					url : topicMgmtAppConfig.restServices + "/gvservices",
 					headers : {
 						'Content-Type' : 'application/json'
 					},
@@ -105,7 +105,7 @@ app.factory('TopicManagementServices', [
 
 				var req = {
 					method : 'GET',
-					url : zettaAppConfig.restServices + "/gvservices/groups",
+					url : topicMgmtAppConfig.restServices + "/gvservices/groups",
 					headers : {
 						'Content-Type' : 'application/json'
 					},
@@ -120,7 +120,7 @@ app.factory('TopicManagementServices', [
 
 				var req = {
 					method : 'GET',
-					url : zettaAppConfig.restServices + "/gvservices/views",
+					url : topicMgmtAppConfig.restServices + "/gvservices/views",
 					headers : {
 						'Content-Type' : 'application/json'
 					},

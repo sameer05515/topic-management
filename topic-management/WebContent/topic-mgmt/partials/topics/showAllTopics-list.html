@@ -55,6 +55,10 @@
 						class="sortorder" ng-show="propertyName === 'dateCreated'"
 						ng-class="{reverse: reverse}"></span>
 					</th>
+					<th>
+						<b><input type="checkbox" ng-model="showPrivateTopics"/>Show Private Topics</b>
+					</th>
+					
 				</tr>
 
 			</table>
@@ -62,7 +66,7 @@
 
 			<!-- <div data-ng-repeat="topic in ( filteredItems =(topicsList | filter:searchText |orderBy:'title'))" > -->
 			<div
-				data-ng-repeat="topic in ( filteredItems =(topicsList | filter:searchText |orderBy:propertyName:reverse))">
+				data-ng-repeat="topic in ( filteredItems =(topicsList | filter:searchText |filter:filterPrivateTopics |orderBy:propertyName:reverse))">
 				<div class="row resultsDisplay">
 					<div class="col-sm-12 col-md-12">
 						<div class="row">
