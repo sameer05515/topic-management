@@ -38,9 +38,11 @@
 					<i class="fa fa-clock-o"></i> Created on <b><span
 						ng-bind="group.dateCreated | date:'MMM/dd/yyyy hh:mm:ss a'"></span></b>
 				</p>
-				<a class="btn btn-primary" href="#/groups/{{group.id}}">Modify <i
-					class="fa fa-angle-right"></i></a> <a class="btn btn-primary"
-					href="#/groups-list">Back to list <i class="fa fa-angle-right"></i></a>
+				<a class="btn btn-xs btn-primary" href="#/groups/{{group.id}}">Modify
+					<i class="fa fa-angle-right"></i>
+				</a> <a class="btn btn-xs btn-primary" href="#/groups-list">Back to
+					list <i class="fa fa-angle-right"></i>
+				</a>
 			</div>
 			<!-- /well -->
 
@@ -68,7 +70,7 @@
 					class="btn btn-xs btn-primary"
 					ng-click="resetViewsAndShowGroupViewRelations()"
 					ng-if="filteredViewItems.length>0">Cancel</a>
-					
+
 				<div ng-repeat="groupViewRelation in groupViewRelationList">
 					<a href="#/views-list/{{groupViewRelation.views.id}}">{{groupViewRelation.views.title}}</a>
 					<!-- <a class="btn btn-xs btn-primary" href="#">Remove<i

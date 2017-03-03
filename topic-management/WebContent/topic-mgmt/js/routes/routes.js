@@ -35,6 +35,11 @@ app.config(['$routeProvider', function ($routeProvider) {
 	// Blog
     .when("/blog", {templateUrl: "partials/blog.html"/* , controller: "BlogCtrl" */})
     .when("/blog/post", {templateUrl: "partials/blog_item.html"/* , controller: "BlogCtrl" */})
+    // Vocabulary
+    .when("/vocabulary/new", {templateUrl: "partials/vocabulary/addWord.html" , controller: "addWordController" })
+    .when("/vocabulary/:id", {templateUrl: "partials/vocabulary/updateWord.html" , controller: "updateWordController" })
+    .when("/vocabulary", {templateUrl: "partials/vocabulary/showAllWords.html" , controller: "showAllWordsController" })
+    
     // else 404
     .otherwise("/404", {templateUrl: "../../partials/404.html"/* , controller: "PshortDescriptionCtrl" */});
 }]);
