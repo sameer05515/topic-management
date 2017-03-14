@@ -1,8 +1,22 @@
 //createGroupController
 
-app.controller('createGroupController', function($scope,$http,$location,topicMgmtAppConfig) {
+app.controller('createGroupController', function($scope,$http,$log,$location,topicMgmtAppConfig) {
 
   $scope.groupObj={"title":"","description":""};
+  
+  var initialGroupObj={};
+  
+  $scope.isDirty = function () {
+      // do your logic and return 'true' to display the prompt, or 'false' otherwise.
+
+	  var isThereSomeChange=!angular.equals(initialGroupObj, $scope.groupObj);
+	  $log.log("--Comparing data to check if there is any change?");
+	  $log.log("$scope.groupObj : " + $scope.groupObj);
+	  $log.log("initialGroupObj : " + initialGroupObj);
+	  $log.log("isThereSomeChange : " + isThereSomeChange);
+	  //return isThereSomeChange;
+      return true;
+  };
   
   $scope.saveGroupObj=function(){
 	  
