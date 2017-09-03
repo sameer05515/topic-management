@@ -3,7 +3,7 @@
 app
 		.controller(
 				'showAllTopicsController',
-				function($scope, $http, topicMgmtAppConfig) {
+				function($scope, $http, topicMgmtAppConfig,TopicManagementServices) {
 
 					$scope.topicObj = {
 						"title" : "my title",
@@ -11,9 +11,12 @@ app
 					};
 					$scope.topicsList = [];
 					$scope.topic = {};
-					var counter = 1;
+					//var $scope.counterrr = 1;
+					$scope.counterrr = 0;
 					$scope.filteredItems = [];
 					$scope.showList = true;
+					
+					$scope.maxRatingValue=TopicManagementServices.maxTopicMgmtRatingValue;
 
 					$scope.showTopicsList = function() {
 						$scope.showList = !$scope.showList;
@@ -51,25 +54,25 @@ app
 					};
 
 					$scope.showAt = function(indexVal) {
-						counter = indexVal;
-						$scope.topic = $scope.filteredItems[counter];
+						$scope.counterrr = indexVal;
+						$scope.topic = $scope.filteredItems[$scope.counterrr];
 						$scope.setSelected($scope.topic.id);
-						// counter = (counter >= $scope.filteredItems.length -
+						// $scope.counterrr = ($scope.counterrr >= $scope.filteredItems.length -
 						// 1) ? 0
-						// : (counter + 1);
+						// : ($scope.counterrr + 1);
 					};
 
 					$scope.next = function() {
-						counter = (counter >= $scope.filteredItems.length - 1) ? 0
-								: (counter + 1);
-						$scope.topic = $scope.filteredItems[counter];
+						$scope.counterrr = ($scope.counterrr >= $scope.filteredItems.length - 1) ? 0
+								: ($scope.counterrr + 1);
+						$scope.topic = $scope.filteredItems[$scope.counterrr];
 						$scope.setSelected($scope.topic.id);
 					};
 
 					$scope.previous = function() {
-						counter = (counter == 0) ? ($scope.filteredItems.length - 1)
-								: (counter - 1);
-						$scope.topic = $scope.filteredItems[counter];
+						$scope.counterrr = ($scope.counterrr == 0) ? ($scope.filteredItems.length - 1)
+								: ($scope.counterrr - 1);
+						$scope.topic = $scope.filteredItems[$scope.counterrr];
 						$scope.setSelected($scope.topic.id);
 					};
 
@@ -124,7 +127,20 @@ app
 					$scope.init = function() {
 						$scope.fetchTopicList();
 						$scope.showTopicsList();
+						//alert('$scope.filteredItems.length'+$scope.filteredItems.length);
+						if($scope.filteredItems.length>0){
+							$scope.topic = $scope.filteredItems[$scope.counterrr];
+							$scope.setSelected($scope.topic.id);
+						}
 					};
+					
+					/* $scope.$watch('filteredItems', function (oldVal, newVal) {
+						if (newVal.length>0) {
+							$scope.counterrr=0;
+							$scope.topic = $scope.filteredItems[$scope.counterrr];
+							$scope.setSelected($scope.topic.id);
+						}
+					}); */
 
 					$scope.init();
 

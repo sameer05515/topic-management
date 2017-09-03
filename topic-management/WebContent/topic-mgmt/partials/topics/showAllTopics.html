@@ -68,8 +68,18 @@
 				class="btn btn-xs btn-primary" ng-click="showTopicsList()"><i
 				class="fa fa-plus">Show List</i></a>
 			<h1 class="page-header">
-				Topic <small>: {{topic.title}}</small>
+				Topic <small>:<!-- [{{topic.id}}] --> [{{counterrr}}]
+					{{topic.title}}
+				</small>
 			</h1>
+
+			<h4>
+				Rating : {{topic.rating}}
+				<div star-rating rating-value="topic.rating"
+					edit-star-rating="false" max="maxRatingValue"></div>
+			</h4>
+
+
 
 			<p>
 				<i class="fa fa-clock-o"></i> Last Modified on <b><span

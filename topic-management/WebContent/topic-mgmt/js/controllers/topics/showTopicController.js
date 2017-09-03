@@ -26,6 +26,9 @@ app
 					$scope.topicGroupsRelationList = [];
 
 					$scope.checked_groups = [];
+					
+					$scope.maxRatingValue=TopicManagementServices.maxTopicMgmtRatingValue;
+					
 					/** Variable Declaration end ################################ */
 
 					/** ##################################################################################################### */

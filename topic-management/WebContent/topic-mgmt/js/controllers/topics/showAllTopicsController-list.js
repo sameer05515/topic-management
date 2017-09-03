@@ -1,6 +1,6 @@
 //viewAllTopicsController-list
 
-app.controller('showAllTopicsController-list', function($scope,$http,$log,topicMgmtAppConfig) {
+app.controller('showAllTopicsController-list', function($scope,$http,$log,topicMgmtAppConfig,TopicManagementServices) {
 	
 	var counter=1;
 	$scope.topic={};
@@ -8,6 +8,8 @@ app.controller('showAllTopicsController-list', function($scope,$http,$log,topicM
   $scope.topicObj={"title":"my title","description":""};  
   $scope.topicsList=[];  
   $scope.showPrivateTopics=false;
+  
+  $scope.maxRatingValue=TopicManagementServices.maxTopicMgmtRatingValue;
   
   $scope.fetchTopicList=function(){	 
 			var urrrlll=topicMgmtAppConfig.restServices+"/topics";
@@ -52,7 +54,7 @@ app.controller('showAllTopicsController-list', function($scope,$http,$log,topicM
 //		return true;
 		
 		var showValue=$scope.showPrivateTopics;
-		$log.log("value.personal : " + value.personal + " $scope.showPrivateTopics : "+showValue);
+		//$log.log("value.personal : " + value.personal + " $scope.showPrivateTopics : "+showValue);
 		return (showValue||!value.personal);
 		
 		

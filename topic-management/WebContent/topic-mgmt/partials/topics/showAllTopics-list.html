@@ -55,10 +55,9 @@
 						class="sortorder" ng-show="propertyName === 'dateCreated'"
 						ng-class="{reverse: reverse}"></span>
 					</th>
-					<th>
-						<b><input type="checkbox" ng-model="showPrivateTopics"/>Show Private Topics</b>
-					</th>
-					
+					<th><b><input type="checkbox" ng-model="showPrivateTopics" />Show
+							Private Topics</b></th>
+
 				</tr>
 
 			</table>
@@ -78,7 +77,9 @@
 
 							<div class="col-md-11">
 								<h4>
-									<a href="#/topics-list/{{topic.id}}">{{topic.title}}</a>
+									<a href="#/topics-list/{{topic.id}}">{{topic.title}}</a> <span
+										star-rating rating-value="topic.rating"
+										edit-star-rating="false" max="maxRatingValue"></span>
 								</h4>
 
 								<p>

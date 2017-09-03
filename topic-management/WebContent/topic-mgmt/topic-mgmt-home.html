@@ -21,17 +21,19 @@
 <!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"> -->
 <link rel="stylesheet"
-	href="http://127.0.0.1:8888/bootstrap-3.3.6-dist/css/bootstrap.min.css">
+	href="http://127.0.0.1:8080/bootstrap-3.3.6-dist/css/bootstrap.min.css">
 <link rel="stylesheet"
-	href="http://127.0.0.1:8888/bootstrap-3.3.6-dist/css/bootstrap-theme.min.css">
+	href="http://127.0.0.1:8080/bootstrap-3.3.6-dist/css/bootstrap-theme.min.css">
 <!-- <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"> -->
 <link rel="stylesheet"
-	href="http://127.0.0.1:8888/font-awesome-4.6.3/css/font-awesome.min.css">
+	href="http://127.0.0.1:8080/font-awesome-4.6.3/css/font-awesome.min.css">
 
 <!-- Our Website CSS Styles -->
 <link rel="stylesheet" href="css/main.css">
 <link rel="stylesheet" href="css/topic-decoration.css">
 <link rel="stylesheet" href="css/animation.css">
+
+<link rel="stylesheet" href="css/star-rating.css">
 
 <link rel="stylesheet" href="../files/trix.css">
 
@@ -45,24 +47,27 @@
 	<div ng-include='"templates/footer.html"'></div>
 
 
-	<script src="http://127.0.0.1:8888/jquery1.11.3/jquery-1.11.3.js"></script>
+	<script src="http://127.0.0.1:8080/jquery1.11.3/jquery-1.11.3.js"></script>
 	<script
-		src="http://127.0.0.1:8888/bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+		src="http://127.0.0.1:8080/bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
 
 
-	<script src='http://127.0.0.1:8888/x2js-master/xml2json.min.js'></script>
-	<script src='http://127.0.0.1:8888/angular-1.5.5/angular.min.js'></script>
+	<script src='http://127.0.0.1:8080/x2js-master/xml2json.min.js'></script>
+	<script src='http://127.0.0.1:8080/angular-1.5.5/angular.min.js'></script>
 	<script
-		src='http://127.0.0.1:8888/angular-1.5.5/angular-sanitize.min.js'></script>
+		src='http://127.0.0.1:8080/angular-1.5.5/angular-sanitize.min.js'></script>
 	<script
-		src='http://127.0.0.1:8888/angular-1.5.5/angular-animate.min.js'></script>
-	<script src="http://127.0.0.1:8888/angular-1.5.5/angular-route.min.js"></script>
+		src='http://127.0.0.1:8080/angular-1.5.5/angular-animate.min.js'></script>
+	<script src="http://127.0.0.1:8080/angular-1.5.5/angular-route.min.js"></script>
 
 	<!-- Our Website Javascripts -->
 	<script src="js/app.js"></script>
 	<script src="js/routes/routes.js"></script>
 	<script src="../files/trix.js"></script>
 	<script src="../files/angular-trix.js"></script>
+	
+	<!-- Custom Directives -->
+	<script src="js/directives/star-rating.js"></script>
 
 
 	<!-- Help and Site Updates -->
@@ -92,13 +97,13 @@
 	<script src="js/controllers/views/showAllViewsController.js"></script>
 	<script src="js/controllers/views/showAllViewsController-list.js"></script>
 	<script src="js/controllers/views/showViewController.js"></script>
-	
+
 	<!-- VOCABULARY Controllers -->
-	
+
 	<script src="js/controllers/vocabulary/addWordController.js"></script>
 	<script src="js/controllers/vocabulary/showAllWordsController.js"></script>
 	<script src="js/controllers/vocabulary/updateWordController.js"></script>
-	
+
 
 
 </body>

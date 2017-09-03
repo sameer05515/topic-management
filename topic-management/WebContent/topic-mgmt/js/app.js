@@ -2,7 +2,8 @@ var app = angular.module('topicMgmtApp', [ 'ngRoute', 'ngAnimate',
 		'angularTrix', 'ngSanitize' ]);
 
 app.constant("topicMgmtAppConfig", {
-	"restServices" : "http://127.0.0.1:8888/RestServices/rest"
+	"restServices" : "http://127.0.0.1:8080/RestServices/rest",
+	"maxTopicMgmtRatingValue":"10"
 });
 
 app.directive('checkList', function() {

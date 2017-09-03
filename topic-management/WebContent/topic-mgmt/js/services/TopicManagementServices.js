@@ -158,6 +158,9 @@ app.factory('TopicManagementServices', [
 				return counter;
 
 			};
+			
+			TopicManagementServices.maxTopicMgmtRatingValue=
+				topicMgmtAppConfig.maxTopicMgmtRatingValue;
 
 			return TopicManagementServices;
 
