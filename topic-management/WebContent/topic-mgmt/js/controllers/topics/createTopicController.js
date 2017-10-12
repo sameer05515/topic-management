@@ -40,7 +40,7 @@ app.controller('createTopicController', function($scope, $http, $location,
 			data : $scope.topicObj
 		}).success(function(data) {
 			// alert("Success : "+data.message);
-			//$location.path('/topics-list');
+			$location.path('/topics-list');
 		}).error(function(data, status) {
 			alert("Error : " + data.message + "status" + data.status);
 		});

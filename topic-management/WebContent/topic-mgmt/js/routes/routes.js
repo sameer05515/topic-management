@@ -39,6 +39,7 @@ app.config(['$routeProvider', function ($routeProvider) {
     .when("/vocabulary/new", {templateUrl: "partials/vocabulary/addWord.html" , controller: "addWordController" })
     .when("/vocabulary/:id", {templateUrl: "partials/vocabulary/updateWord.html" , controller: "updateWordController" })
     .when("/vocabulary", {templateUrl: "partials/vocabulary/showAllWords.html" , controller: "showAllWordsController" })
+    .when("/multipleSectionController",{templateUrl: "partials/topics/multipleSectionController.html", controller: "multipleSectionController"})
     
     // else 404
     .otherwise("/404", {templateUrl: "../../partials/404.html"/* , controller: "PshortDescriptionCtrl" */});
