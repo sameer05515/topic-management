@@ -42,6 +42,11 @@
 						class="sortorder" ng-show="propertyName === 'dateCreated'"
 						ng-class="{reverse: reverse}"></span>
 					</th>
+					<th>
+						<button class="btn btn-xs btn-primary" ng-click="sortBy('rating')">Rating</button>
+						<span class="sortorder" ng-show="propertyName === 'rating'"
+						ng-class="{reverse: reverse}"></span>
+					</th>
 				</tr>
 
 			</table>
