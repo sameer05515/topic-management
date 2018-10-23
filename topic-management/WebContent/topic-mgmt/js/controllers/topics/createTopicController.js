@@ -40,6 +40,18 @@ app.controller('createTopicController', function($scope, $http, $location,
 			data : $scope.topicObj
 		}).success(function(data) {
 			// alert("Success : "+data.message);
+			
+			TopicManagementServices.saveTopicReads(data.new_topic_id);
+//			.success(function(data) {
+//				// alert("Success : "+data);
+//				//$scope.topicsReads = data;
+//				//$scope.fetchTopicReads();
+//			// $scope.sortBy($scope.propertyName);
+//			})
+//			.error(function(data) {
+//				alert("Error : " + data);
+//			});
+			
 			$location.path('/topics-list');
 		}).error(function(data, status) {
 			alert("Error : " + data.message + "status" + data.status);

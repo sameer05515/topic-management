@@ -36,6 +36,28 @@ app.factory('TopicManagementServices', [
 						+ topicId);
 			};
 			
+			TopicManagementServices.fetchTopicReads = function(topicId) {
+
+				return $http.get(topicMgmtAppConfig.restServices + "/topics" + "/"
+						+ topicId+"/reads");
+			};
+			
+			TopicManagementServices.saveTopicReads = function(
+					topicId) {
+
+				var req = {
+					method : 'PUT',
+					url : topicMgmtAppConfig.restServices + "/topics/"+ topicId +
+							"/markread",
+					headers : {
+						'Content-Type' : 'application/json'
+					}/*,
+					data : angular.fromJson(topicGroupRelationResource)*/
+				};
+
+				return $http(req);
+			};
+			
 			/**Save, Fetch TopicGroupRelation */
 
 			TopicManagementServices.saveTopicGroupRelationList = function(
