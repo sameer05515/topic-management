@@ -41,6 +41,13 @@ app.config(['$routeProvider', function ($routeProvider) {
     .when("/vocabulary", {templateUrl: "partials/vocabulary/showAllWords.html" , controller: "showAllWordsController" })
     .when("/multipleSectionController",{templateUrl: "partials/topics/multipleSectionController.html", controller: "multipleSectionController"})
     
+    // Tasks
+    .when("/tasks/new", {templateUrl: "partials/tasks/createTask.html" , controller: "createTaskController" })
+    .when("/tasks/:id", {templateUrl: "partials/tasks/updateTask.html" , controller: "updateTaskController" })
+    .when("/tasks-list", {templateUrl: "partials/tasks/showAllTasks-list.html" , controller: "showAllTasksController-list" })
+    .when("/tasks-list/:id", {templateUrl: "partials/tasks/showTask.html", controller: "showTaskController"})
+    
+    
     // else 404
     .otherwise("/404", {templateUrl: "../../partials/404.html"/* , controller: "PshortDescriptionCtrl" */});
 }]);

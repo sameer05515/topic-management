@@ -3,7 +3,8 @@ var app = angular.module('topicMgmtApp', [ 'ngRoute', 'ngAnimate',
 
 app.constant("topicMgmtAppConfig", {
 	"restServices" : "http://127.0.0.1:9999/RestServices/rest",
-	"maxTopicMgmtRatingValue":"10"
+	"maxTopicMgmtRatingValue":"10",
+	"taskMgmtService":"http://127.0.0.1:9999/task-mgmt-service/"
 });
 
 app.directive('checkList', function() {
